@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: '蚂蚁补贴',
+        title: '蚂蚁',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: Colors.pink,
