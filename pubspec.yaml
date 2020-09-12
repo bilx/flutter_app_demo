@@ -35,7 +35,7 @@ dependencies:
   # 状态管理
   provider: ^4.3.2+2
   # 依赖注入
-  get_it: ^4.0.4
+  get_it: ^4.0.3
   # 检查网络状态
   connectivity: ^0.4.9+2
 

@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_app_antrebate/locator.dart';
 import 'package:provider/provider.dart';
 
 class BaseView<T extends ChangeNotifier> extends StatefulWidget {
@@ -8,12 +9,27 @@ class BaseView<T extends ChangeNotifier> extends StatefulWidget {
   BaseView({@required this.builder, this.onModelReady});
 
   @override
-  _BaseViewState createState() => _BaseViewState();
+  _BaseViewState createState() => _BaseViewState<T>();
 }
 
-class _BaseViewState extends State<BaseView> {
+class _BaseViewState<T extends ChangeNotifier> extends State<BaseView<T>> {
+  T model = locator<T>();
+
+  @override
+  void initState() {
+    if (widget.onModelReady != null) {
+      widget.onModelReady(model);
+    }
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ChangeNotifierProvider<T>(
+      create: (_) => model,
+      child: Consumer<T>(
+        builder: widget.builder,
+      ),
+    );
   }
 }

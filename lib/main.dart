@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter_app_antrebate/core/service/net/repository/app_repository.dart';
+import 'package:flutter_app_antrebate/locator.dart';
 import 'package:flutter_app_antrebate/ui/main/page/index_page.dart';
 
 void main() {
+  //注入初始化
+  setupLocator();
+  //启动app
   runApp(MyApp());
 }
 
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: '百姓生活+',
+        title: '蚂蚁补贴',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: Colors.pink,
