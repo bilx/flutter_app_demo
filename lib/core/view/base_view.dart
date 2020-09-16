@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_antrebate/locator.dart';
+import 'package:flutter_app_antrebate/di/locator.dart';
 import 'package:provider/provider.dart';
 
+///
+/// 封装
+///
 class BaseView<T extends ChangeNotifier> extends StatefulWidget {
   final Widget Function(BuildContext context, T value, Widget child) builder;
   final Function(T) onModelReady;

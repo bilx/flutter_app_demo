@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_antrebate/locator.dart';
+import 'package:flutter_app_antrebate/di/locator.dart';
 import 'package:flutter_app_antrebate/ui/main/page/index_page.dart';
 
 void main() {

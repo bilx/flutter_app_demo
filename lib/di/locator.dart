@@ -7,14 +7,14 @@ GetIt locator = GetIt.instance;
 //开始注入
 void setupLocator() {
   //注册viewmodel
-  locator.registerFactory<IndexViewModel>(() => IndexViewModel());
+  _registerViewModel();
 
   print("GetIt registed");
 
 }
 
-// //注册viewmodel
-// void _registerViewModel() {
-//   //首页索引viewmodel
-//   locator.registerLazySingleton<IndexViewModel>(() => IndexViewModel());
-// }
+//注册viewmodel
+void _registerViewModel() {
+  //首页索引viewmodel
+  locator.registerLazySingleton<IndexViewModel>(() => IndexViewModel());
+}
